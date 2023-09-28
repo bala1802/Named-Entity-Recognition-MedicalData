@@ -21,3 +21,45 @@ Kaggle: https://www.kaggle.com/datasets/finalepoch/medical-ner/data
 
 <img width="669" alt="image" src="https://github.com/bala1802/Named-Entity-Recognition-MedicalData/assets/22103095/a6e95bc1-dc31-4b2c-a91b-f6da0d95f10a">
 
+## Model Training:
+
+- The model training is done on the `training_data.psacy` and validated on the `validation_data.spacy`.
+- The command to train the spacy model is `! python -m spacy train config.cfg --output ./ --paths.train ./training_data.spacy --paths.dev ./validation_data.spacy`
+
+### Training Result:
+
+<img width="1163" alt="Training" src="https://github.com/bala1802/Named-Entity-Recognition-MedicalData/assets/22103095/b92a12ba-50d5-40ae-9eec-bbbaa7676c56">
+
+## Model Testing:
+
+The Medical test data is identified to test the trained model
+
+### Test Data:
+
+'''
+The patient was prescribed Aspirin for their heart condition.
+The doctor recommended Ibuprofen to alleviate the patient's headache.
+The patient is suffering from diabetes, and they need to take Metformin regularly.
+After the surgery, the patient experienced some post-operative complications, including infection.
+The patient is currently on a regimen of Lisinopril to manage their high blood pressure.
+The antibiotic course for treating the bacterial infection should be completed as prescribed.
+The patient's insulin dosage needs to be adjusted to better control their blood sugar levels.
+The physician suspects that the patient may have pneumonia and has ordered a chest X-ray.
+The patient's cholesterol levels are high, and they have been advised to take Atorvastatin.
+The allergy to penicillin was noted in the patient's medical history.
+'''
+
+### Test Result:
+
+<img width="900" alt="Test_Result" src="https://github.com/bala1802/Named-Entity-Recognition-MedicalData/assets/22103095/d1be3f71-3f5c-4a0b-aa28-bc3ac5509863">
+
+## Why do we need Custom NER (Named Entity Recognition) model trained from the scratch, when we have BERT based models, RoBERTa etc?
+
+1. `Domain-specific entities`: Pre-trained NER models like BERT are trained on a wide range of text from the internet and may not perform optimally for `domain-specific entities`. If the application or research we work involves `specialized jargon, industry-specific terms, or rare entities`, a `Custom NER` model can be fine-tuned on the domain-specific data to `improve accuracy`.
+
+2. `Data annotation quality`: Custom NER allows us to have full control over the `annotation` process, ensuring that the training data can accurately reflect the entities of interest in the `specific context`, reducing the chances of `false positives or negatives` that might occur with `generic pre-trained` models.
+
+3. `Adaptation to unique requirements`: Every application has its own unique requirements and constraints. Custom NER models can be tailored to meet these specific needs.
+
+
+
