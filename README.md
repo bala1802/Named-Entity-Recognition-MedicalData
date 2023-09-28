@@ -61,5 +61,6 @@ The allergy to penicillin was noted in the patient's medical history.
 
 3. `Adaptation to unique requirements`: Every application has its own unique requirements and constraints. Custom NER models can be tailored to meet these specific needs.
 
+4. `Privacy and data sensitivity`: In some cases, we may be working with sensitive data that cannot be shared with external pre-trained models. `Custom NER` allows us to develop an `in-house` solution that respects privacy and data security concerns.
 
-
+## Loss Funct
